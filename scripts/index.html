@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="img/les_petits_plats_logo.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/aca9a1ae0c.js" crossorigin="anonymous"></script>
+    <title>Les petits plats</title>
+</head>
+
+<body>
+    <header id="header">
+        <div class="logo-container">
+            <img class="logo" src="./img/les_petits_plats_logo.png">
+        </div>
+        <div class="form">
+            <form class="search-form">
+                <input type="input" placeholder="Rechercher une recette" class="search">
+                <button class="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+        <div class="btn-container">
+            <div>
+                <button class="select-ingredients-btn">Ingrédients <i class="fa-solid fa-chevron-down"></i></button>
+            </div>
+            <div>
+                <button class="select-appliance-btn">Appareils <i class="fa-solid fa-chevron-down"></i></button>
+            </div>
+            <div>
+                <button class="select-utensils-btn">Ustensiles <i class="fa-solid fa-chevron-down"></i></button>
+            </div>
+        </div>
+        <div id="ingredients-drawer"></div>
+    </header>
+    <main id="main">
+        <div class="recipes"></div>
+    </main>
+    <footer>
+
+    </footer>
+    <script type="module" src="./scripts/factories/showRecipes.js"></script>
+    <script type="module" src="./scripts/factories/ingredientsDrawer.js"></script>
+</body>
+
+</html>
