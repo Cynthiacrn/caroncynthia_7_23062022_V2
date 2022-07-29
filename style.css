@@ -224,3 +224,7 @@ body {
   justify-content: space-between;
   margin-bottom: 20px;
 }
+
+.no-match {
+  grid-column: 1/4;
+}

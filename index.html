@@ -18,7 +18,7 @@
         </div>
         <div class="form">
             <form class="search-form">
-                <input type="input" placeholder="Rechercher une recette" class="search">
+                <input type="input" placeholder="Rechercher une recette" class="search" id="search">
                 <button class="button"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>
@@ -28,16 +28,16 @@
             <div id="ingredients-drawer"></div>
 
             <button id="appliances" class="select-appliance-btn">Appareils <i
-                    class="fa-solid fa-chevron-down appliance-arrow"></i></button>
+                    class="fa-solid fa-chevron-down"></i></button>
             <div id="appliances-drawer"></div>
 
             <button id="ustensils" class="select-utensils-btn">Ustensiles <i
-                    class="fa-solid fa-chevron-down ustensil-arrow"></i></button>
+                    class="fa-solid fa-chevron-down"></i></button>
             <div id="ustensils-drawer"></div>
         </div>
     </header>
     <main id="main">
-        <div class="recipes"></div>
+        <div class="recipes" id="recipes"></div>
     </main>
     <footer>
 
@@ -46,6 +46,7 @@
     <script type="module" src="./scripts/factories/ingredientsDrawer.js"></script>
     <script type="module" src="./scripts/factories/appliancesDrawer.js"></script>
     <script type="module" src="./scripts/factories/ustensilsDrawer.js"></script>
+    <script type="module" src="./scripts/factories/search.js"></script>
 </body>
 
 </html>

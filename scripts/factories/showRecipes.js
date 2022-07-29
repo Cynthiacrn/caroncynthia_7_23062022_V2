@@ -6,9 +6,10 @@ function displayData() {
 displayData();
 
 function showRecipes(recipes) {
+  let recipesWrapper = document.querySelector(".recipes");
+  let t0 = performance.now();
+  recipesWrapper.innerHTML = "";
   for (let recipe of recipes) {
-    let recipesWrapper = document.querySelector(".recipes");
-
     // création d'un container afin d'afficher chaque recette //
     let container = document.createElement("article");
     container.className = "recipe-container";
@@ -82,6 +83,8 @@ function showRecipes(recipes) {
     bodyContainer.appendChild(ingredientsContent);
     bodyContainer.appendChild(descriptionContent);
   }
+  let t1 = performance.now();
+  console.log(t1 - t0);
 }
 
-showRecipes();
+export { showRecipes };

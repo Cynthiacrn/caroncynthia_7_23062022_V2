@@ -1,66 +1,66 @@
 import { recipes } from "../recipes.js";
 
-document.querySelector("body").addEventListener("click", (e) => {
-  openIngredientsDrawer(e);
-});
+// document.querySelector("body").addEventListener("click", (e) => {
+//   openIngredientsDrawer(e);
+// });
 
-let visibleappliance = false;
-let visibleUstensil = false;
-let visibleIngredient = false;
-const ingredientDrawer = document.querySelector("#ingredients-drawer");
-const ingredientButton = document.querySelector(".select-ingredients-btn");
-const applianceDrawer = document.querySelector("#appliances-drawer");
-const applianceButton = document.querySelector(".select-appliance-btn");
-const ustensilDrawer = document.querySelector("#ustensils-drawer");
-const ustensilButton = document.querySelector(".select-ustensil-btn");
+// let visibleappliance = false;
+// let visibleUstensil = false;
+// let visibleIngredient = false;
+// const ingredientDrawer = document.querySelector("#ingredients-drawer");
+// const ingredientButton = document.querySelector(".select-ingredients-btn");
+// const applianceDrawer = document.querySelector("#appliances-drawer");
+// const applianceButton = document.querySelector(".select-appliance-btn");
+// const ustensilDrawer = document.querySelector("#ustensils-drawer");
+// const ustensilButton = document.querySelector(".select-ustensil-btn");
 
-function openIngredientsDrawer(e) {
-  ingredientDrawer.style.display = "none";
-  applianceDrawer.style.display = "none";
-  ustensilDrawer.style.display = "none";
-  if (
-    e.target.parentNode.id === "ingredients" ||
-    e.target.parentNode.id === "arrow-ingredients"
-  ) {
-    if (visibleIngredient === false) {
-      ingredientDrawer.style.display = "block";
-      ingredientButton.style.display = "none";
-      visibleIngredient = true;
-    } else {
-      ingredientDrawer.style.display = "none";
-      ingredientButton.style.display = "block";
-      visibleIngredient = false;
-    }
-  }
-  if (
-    e.target.parentNode.id === "ingredients" ||
-    e.target.parentNode.id === "arrow-ingredients"
-  ) {
-    if (visibleIngredient === false) {
-      ingredientDrawer.style.display = "block";
-      ingredientButton.style.display = "none";
-      visibleIngredient = true;
-    } else {
-      ingredientDrawer.style.display = "none";
-      ingredientButton.style.display = "block";
-      visibleIngredient = false;
-    }
-  }
-  if (
-    e.target.parentNode.id === "ingredients" ||
-    e.target.parentNode.id === "arrow-ingredients"
-  ) {
-    if (visibleIngredient === false) {
-      ingredientDrawer.style.display = "block";
-      ingredientButton.style.display = "none";
-      visibleIngredient = true;
-    } else {
-      ingredientDrawer.style.display = "none";
-      ingredientButton.style.display = "block";
-      visibleIngredient = false;
-    }
-  }
-}
+// function openIngredientsDrawer(e) {
+//   ingredientDrawer.style.display = "none";
+//   applianceDrawer.style.display = "none";
+//   ustensilDrawer.style.display = "none";
+//   if (
+//     e.target.parentNode.id === "ingredients" ||
+//     e.target.parentNode.id === "arrow-ingredients"
+//   ) {
+//     if (visibleIngredient === false) {
+//       ingredientDrawer.style.display = "block";
+//       ingredientButton.style.display = "none";
+//       visibleIngredient = true;
+//     } else {
+//       ingredientDrawer.style.display = "none";
+//       ingredientButton.style.display = "block";
+//       visibleIngredient = false;
+//     }
+//   }
+//   if (
+//     e.target.parentNode.id === "appliances" ||
+//     e.target.parentNode.id === "arrow-appliances"
+//   ) {
+//     if (visibleappliance === false) {
+//       applianceDrawer.style.display = "block";
+//       applianceButton.style.display = "none";
+//       visibleappliance = true;
+//     } else {
+//       applianceDrawer.style.display = "none";
+//       applianceButton.style.display = "block";
+//       visibleappliance = false;
+//     }
+//   }
+// if (
+//   e.target.parentNode.id === "ingredients" ||
+//   e.target.parentNode.id === "arrow-ingredients"
+// ) {
+//   if (visibleIngredient === false) {
+//     ingredientDrawer.style.display = "block";
+//     ingredientButton.style.display = "none";
+//     visibleIngredient = true;
+//   } else {
+//     ingredientDrawer.style.display = "none";
+//     ingredientButton.style.display = "block";
+//     visibleIngredient = false;
+//   }
+// }
+// }
 
 function displayData() {
   ingredientsDrawer(recipes);
@@ -74,7 +74,7 @@ function ingredientsDrawer(recipes) {
 
   let uniqueIngredients = Array.from(new Set(ingredients)).slice(0, 30);
   let ingredientsDrawer = document.querySelector("#ingredients-drawer");
-  ingredientsDrawer.style.display = "none";
+  // ingredientsDrawer.style.display = "none";
 
   let container = document.createElement("div");
   container.className = "ingredients-drawer-container";
@@ -84,6 +84,7 @@ function ingredientsDrawer(recipes) {
   let searchInput = document.createElement("input");
   searchInput.placeholder = "Rechercher un ingrédient";
   searchInput.className = "ingredients-drawer-search";
+  searchInput.id = "ingredients-drawer-search";
   let arrowSearchContainer = document.createElement("div");
   arrowSearchContainer.className = "arrow-search-container";
   arrowSearchContainer.id = "arrow-ingredients";
@@ -96,7 +97,9 @@ function ingredientsDrawer(recipes) {
   searchContainer.appendChild(arrowSearchContainer);
 
   let ingredientWrapper = document.createElement("div");
+  ingredientWrapper.innerHTML = "";
   ingredientWrapper.className = "drawer-ingredient-wrapper";
+  ingredientWrapper.id = "drawer-ingredient-wrapper";
 
   container.appendChild(searchContainer);
   container.appendChild(ingredientWrapper);
@@ -114,3 +117,5 @@ function ingredientsDrawer(recipes) {
 
   ingredientsDrawer.appendChild(container);
 }
+
+export { ingredientsDrawer };
